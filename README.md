@@ -23,6 +23,7 @@
 - Spring (Boot, JPA, Security, Web)
 - Hibernate
 - SQL
+- Java Mail Library
 
 # Initial Features
 
