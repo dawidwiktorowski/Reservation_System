@@ -24,6 +24,8 @@
 - Hibernate
 - SQL
 - Java Mail Library
+- HTML
+- CSS
 
 # Initial Features
 
