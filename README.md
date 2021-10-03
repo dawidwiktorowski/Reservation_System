@@ -14,3 +14,5 @@
 
 - Acceptance of reservation
 - Ability to add new services and sub-services
+- Preview of reservations which are awaiting approval
+- The admin will receive emails when a user wants to make a reservation or change a reservation
