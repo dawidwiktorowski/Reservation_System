@@ -16,3 +16,18 @@
 - Ability to add new services and sub-services
 - Preview of reservations which are awaiting approval
 - The admin will receive emails when a user wants to make a reservation or change a reservation
+
+# Technologies
+
+- Java 15
+- Spring
+- Hibernate
+- SQL
+
+# Initial Features
+
+- [X] Create repo
+- [X] Create application skeleton
+- [ ] Create and connect with database
+- [ ] Create user entity
+- [ ] Create admin entity
