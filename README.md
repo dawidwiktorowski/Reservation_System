@@ -20,7 +20,7 @@
 # Technologies
 
 - Java 15
-- Spring
+- Spring (Boot, JPA, Security, Web)
 - Hibernate
 - SQL
 
