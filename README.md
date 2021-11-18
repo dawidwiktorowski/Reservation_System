@@ -31,6 +31,6 @@
 
 - [X] Create repo
 - [X] Create application skeleton
-- [ ] Create and connect with database
+- [X] Create and connect with database
 - [ ] Create user entity
 - [ ] Create admin entity
