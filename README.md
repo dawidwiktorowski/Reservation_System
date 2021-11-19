@@ -27,7 +27,7 @@
 - HTML
 - CSS
 
-# Initial Features
+# To do list
 
 - [X] Create repo
 - [X] Create application skeleton
