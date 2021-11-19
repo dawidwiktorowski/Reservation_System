@@ -32,5 +32,8 @@
 - [X] Create repo
 - [X] Create application skeleton
 - [X] Create and connect with database
-- [ ] Create user entity
-- [ ] Create admin entity
+- [X] Create user entity
+- [X] Create category entity
+- [X] Create role entity
+- [X] Create sub category entity
+- [X] Create reservation entity
