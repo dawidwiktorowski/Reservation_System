@@ -1,4 +1,4 @@
 package pl.dawidwiktorowski.reservation_system.model;
 
-public class SubCategories {
+public class SubCategory {
 }
