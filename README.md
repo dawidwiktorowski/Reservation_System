@@ -27,10 +27,16 @@
 - HTML
 - CSS
 
-# Initial Features
+# To do list
 
-- [X] Create repo
-- [X] Create application skeleton
-- [ ] Create and connect with database
-- [ ] Create user entity
-- [ ] Create admin entity
+- [X] Created repo
+- [X] Created application skeleton
+- [X] Created and connect with database
+- [X] Created user entity
+- [X] Created category entity
+- [X] Created role entity
+- [X] Created sub category entity
+- [X] Created reservation entity
+- [ ] Created controller
+- [ ] Created repository
+- [ ] Created service
