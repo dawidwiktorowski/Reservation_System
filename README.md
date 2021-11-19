@@ -29,11 +29,14 @@
 
 # To do list
 
-- [X] Create repo
-- [X] Create application skeleton
-- [X] Create and connect with database
-- [X] Create user entity
-- [X] Create category entity
-- [X] Create role entity
-- [X] Create sub category entity
-- [X] Create reservation entity
+- [X] Created repo
+- [X] Created application skeleton
+- [X] Created and connect with database
+- [X] Created user entity
+- [X] Created category entity
+- [X] Created role entity
+- [X] Created sub category entity
+- [X] Created reservation entity
+- [] Created controller
+- [] Created repository
+- [] Created service
