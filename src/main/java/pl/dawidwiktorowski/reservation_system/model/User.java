@@ -1,9 +1,7 @@
 package pl.dawidwiktorowski.reservation_system.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class User {
@@ -21,4 +19,12 @@ public class User {
     private String password;
 
     private String phoneNumber;
+
+    private boolean active;
+
+    @OneToOne
+    private Role role;
+
+    @OneToMany(mappedBy = "user")
+    private List<Reservation> reservations;
 }
