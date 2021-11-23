@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+html {
+    text-align: center;
+    font-family: 'opens sans', sans-serif;
+}
+
 body {
 
     padding-bottom: 3rem;
@@ -11,7 +16,7 @@ body {
 }
 
 header {
-    height: 10vh;
+
     font-size: 25px;
     position: fixed;
     width: 100%;
@@ -40,12 +45,14 @@ main {
 }
 
 .carousel-caption {
-    bottom: 3rem;
-
+    bottom: 18rem;
+    color: black;
+    right: 5%;
+    left: 5%;
 }
 
 .carousel-item {
-    height: 55vh;
+    height: 85vh;
 
 
 }
@@ -58,10 +65,15 @@ main {
     height: 50rem;
 }
 
-
 .marketing .col-lg-4 {
-    margin-bottom: 1.5rem;
-    text-align: center;
+    padding: 20px;
+}
+
+
+
+.marketing .col-lg-4 img {
+    width: 100%;
+    align-self: center;
 }
 
 .marketing h2 {
