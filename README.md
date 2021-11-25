@@ -39,4 +39,4 @@
 - [X] Created reservation entity
 - [X] Created controller
 - [X] Created repository
-- [X] Created service
+- [X] Created servicex
