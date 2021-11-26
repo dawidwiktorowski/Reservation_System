@@ -22,8 +22,6 @@ public class ReservationController {
 
     @GetMapping("/show")
     public String showAll(Model model) {
-        List<User> users = userRepository.findAll();
-        model.addAttribute("users",users);
         return "index";
     }
 
