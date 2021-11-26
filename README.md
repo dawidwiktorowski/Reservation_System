@@ -37,6 +37,6 @@
 - [X] Created role entity
 - [X] Created sub category entity
 - [X] Created reservation entity
-- [ ] Created controller
+- [X] Created controller
 - [X] Created repository
-- [ ] Created service
+- [X] Created service
