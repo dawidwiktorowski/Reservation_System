@@ -40,3 +40,13 @@
 - [X] Created controller
 - [X] Created repository
 - [X] Created service
+
+# Preview
+
+# Registry
+
+![Registry form](./screenshots/Registry.png)
+
+# Login view
+![Login form](./screenshots/Logging.png)
+
