@@ -5,10 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.dawidwiktorowski.reservation_system.model.User;
 import pl.dawidwiktorowski.reservation_system.repository.UserRepository;
-
-import java.util.List;
 
 @Controller
 @RequestMapping("/reservation")
