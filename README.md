@@ -43,10 +43,11 @@
 
 # Preview
 
-# Registry
+<h1 align="center">Registry view</h1>
 
 ![Registry form](./screenshots/Registry.png)
 
-# Login view
+<h1 align="center">Login view</h1>
+
 ![Login form](./screenshots/Logging.png)
 
