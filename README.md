@@ -40,7 +40,11 @@
 - [X] Created controller
 - [X] Created repository
 - [X] Created service
-
+- [ ] Created main view
+- [x] Created login view
+- [x] Created registry view
+- [ ] Created reservation list view
+- [ ] Created my reservation view
 # Preview
 
 <h1 align="center">Registry view</h1>
