@@ -47,6 +47,10 @@
 - [ ] Created my reservation view
 # Preview
 
+<h1 align="center">Main view</h1>
+
+![Main view](./screenshots/Main_view.png)
+
 <h1 align="center">Registry view</h1>
 
 ![Registry form](./screenshots/Registry.png)
