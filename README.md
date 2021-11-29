@@ -43,7 +43,7 @@
 - [ ] Created main view
 - [x] Created login view
 - [x] Created registry view
-- [ ] Created reservation list view
+- [x] Created reservation list view
 - [ ] Created my reservation view
 # Preview
 
@@ -54,4 +54,9 @@
 <h1 align="center">Login view</h1>
 
 ![Login form](./screenshots/Logging.png)
+
+
+<h1 align="center">Reservation view</h1>
+
+![Reservation form](./screenshots/ReservationView.png)
 
