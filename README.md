@@ -26,6 +26,7 @@
 - Java Mail Library
 - HTML
 - CSS
+- Thymeleaf
 
 # To do list
 
