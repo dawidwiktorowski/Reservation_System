@@ -8,7 +8,7 @@
   <title>Form</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="sylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <link href="../static/css/form.css" rel="stylesheet">
+  <link href="../static/css/form.css" rel="stylesheet" th:href="@{css/form.css}">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
     </div>
     <form action="" class="signUp">
       <div class="formGroup">
-        <input type="text" name="" id="user name" placeholder="Nazwa użytkownika" autocomplete="off">
+        <input type="text" name="username" id="username" placeholder="Nazwa użytkownika" autocomplete="off">
       </div>
       <div class="formGroup">
         <input type="email" name="email" id="EMAIL ID" placeholder="Email" autocomplete="off">
@@ -42,7 +42,7 @@
     </form>
 
 
-    <form action="" class="login">
+    <form action="/login" method="post" class="login">
       <div class="formGroup">
         <input type="email" name="email" id="EMAIL ID_login" placeholder="Email" autocomplete="off">
       </div>
@@ -61,6 +61,6 @@
 </div>
 </body>
 
-<script src="../static/js/form.js"></script>
+<script src="../static/js/form.js" th:src="@{/js/form.js}"></script>
 
 </html>
