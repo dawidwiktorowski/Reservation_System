@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pl">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
   <meta charset="utf-8">
@@ -43,6 +43,7 @@
 
 
     <form action="/login" method="post" class="login">
+      <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
       <div class="formGroup">
         <input type="email" name="email" id="EMAIL ID_login" placeholder="Email" autocomplete="off">
       </div>
