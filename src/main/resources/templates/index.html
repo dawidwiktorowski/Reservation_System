@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <meta charset="utf-8">
@@ -28,7 +28,8 @@
             <li><a href="">Usługi</a></li>
             <li><a href="">Galeria</a></li>
             <li><a href="">Kontakt</a></li>
-            <li><a th:href="@{/login}">Zaloguj</a></li>
+            <li><a sec:authorize="isAnonymous()" th:href="@{/login}">Zaloguj</a></li>
+            <li><a sec:authorize="isAuthenticated()" th:href="@{/logout}">Wyloguj</a></li>
         </ul>
     </nav>
 </header>
