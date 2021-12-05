@@ -12,3 +12,15 @@ spring:
     user:
       name: user1
       password: user1
+
+  thymeleaf:
+    cache: false
+    check-template: true
+    check-template-location: true
+    servlet:
+      content-type: text/html
+    enabled: true
+    encoding: utf-8
+    mode: HTML
+    prefix: classpath:/templates/
+    suffix: .html
