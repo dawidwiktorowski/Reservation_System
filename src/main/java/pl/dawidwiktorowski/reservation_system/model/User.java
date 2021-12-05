@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "users")
 public class User {
 
     @Id
@@ -20,9 +21,10 @@ public class User {
 
     private String phoneNumber;
 
-    private boolean active;
+    private int active;
 
     @OneToOne
+//    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Role role;
 
     @OneToMany(mappedBy = "user")
@@ -31,7 +33,8 @@ public class User {
     public User() {
     }
 
-    public User(Long id, String firstname, String lastname, String email, String password, String phoneNumber, boolean active, Role role, List<Reservation> reservations) {
+
+    public User(Long id, String firstname, String lastname, String email, String password, String phoneNumber, int active, Role role, List<Reservation> reservations) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -91,11 +94,11 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public boolean isActive() {
+    public int getActive() {
         return active;
     }
 
-    public void setActive(boolean active) {
+    public void setActive(int active) {
         this.active = active;
     }
 
