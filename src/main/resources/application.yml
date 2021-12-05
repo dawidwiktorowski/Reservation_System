@@ -8,10 +8,6 @@ spring:
     show-sql: true
     hibernate:
         ddl-auto: update
-  security:
-    user:
-      name: user1
-      password: user1
 
   thymeleaf:
     cache: false
