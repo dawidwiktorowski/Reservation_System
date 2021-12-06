@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pl" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -26,6 +26,7 @@
             <div class="checkbox">
                 <input type="checkbox" name="checkbox" id="checkbox">
                 <span class="text">Zapamiętaj hasło na tym urządzeniu</span>
+                <p id="error" th:if="${messageerror}" th:text="${messageerror}"></p>
             </div>
             <div class="formGroup">
                 <button type="submit" class="btn2">Zaloguj</button>

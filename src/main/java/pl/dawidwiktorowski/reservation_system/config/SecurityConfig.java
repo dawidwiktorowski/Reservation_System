@@ -7,6 +7,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.sql.DataSource;
@@ -19,16 +20,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private DataSource dataSource;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    BCryptPasswordEncoder bCryptPasswordEncoder;
 
     protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
         authenticationManagerBuilder
                 .jdbcAuthentication()
                 .dataSource(dataSource)
-                .usersByUsernameQuery("select email, password, active from users where email = ?")
+                .usersByUsernameQuery("select email, password, active from user where email = ?")
                 .authoritiesByUsernameQuery("select u.email, r.role_type, from users u inner join user_role ur on (u.id = ur.user_id) inner join role r on(ur.role_id=r.id) where u.email=?")
-                .passwordEncoder(passwordEncoder);
+                .passwordEncoder(bCryptPasswordEncoder);
     }
 
     @Override
@@ -42,14 +42,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/login")
+                .loginPage("/login").permitAll()
+                .defaultSuccessUrl("/", true)
                 .usernameParameter("email")
                 .passwordParameter("password")
-                .defaultSuccessUrl("/", true)
                 .and()
                 .logout()
                 .logoutUrl("/?logout")
-                .logoutSuccessUrl("/");
+                .logoutSuccessUrl("/")
+                .and().csrf().disable();
     }
 
     public void configure(WebSecurity webSecurity) {

@@ -14,6 +14,8 @@ import java.util.Map;
 @Service
 public class UserServiceImpl implements UserService {
 
+    private static final String DEFAULT_ROLE = "ROLE_USER";
+
     @Autowired
     private UserRepository userRepository;
 
@@ -23,11 +25,15 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    public UserServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
     @Override
     public void saveUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setActive(true);
-        Role role = roleRepository.findByRoleType("ROLE_USER");
+        user.setActive(1);
+        Role role = roleRepository.findByRoleType(DEFAULT_ROLE);
         user.setRole(role);
         userRepository.save(user);
     }
@@ -44,7 +50,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void update(User user) {
-        userRepository.findById(user.getId()).ifPresent(updateUser ->{
+        userRepository.findById(user.getId()).ifPresent(updateUser -> {
             updateUser.setFirstname(user.getFirstname());
             updateUser.setLastname(user.getLastname());
             updateUser.setEmail(user.getEmail());
@@ -55,7 +61,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void forgottenPassword(User user, Map<String, String> requestParam) {
-        userRepository.findById(user.getId()).ifPresent(updateUserPassword ->{
+        userRepository.findById(user.getId()).ifPresent(updateUserPassword -> {
             updateUserPassword.setPassword(passwordEncoder.encode(requestParam.get("password")));
             userRepository.save(updateUserPassword);
         });

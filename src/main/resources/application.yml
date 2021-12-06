@@ -20,3 +20,6 @@ spring:
     mode: HTML
     prefix: classpath:/templates/
     suffix: .html
+
+
+
