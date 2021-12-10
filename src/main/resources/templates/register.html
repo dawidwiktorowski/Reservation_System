@@ -37,10 +37,10 @@
 
         <form th:action="@{/register}" th:object="${user}" method="post" class="signUp">
             <div class="formGroup">
-                <input type="text" name="name" th:field = "*{firstname}" id="user name" placeholder="Imię" autocomplete="off">
+                <input type="text" name="name" th:field = "*{firstName}" id="user name" placeholder="Imię" autocomplete="off">
             </div>
             <div class="formGroup">
-                <input type="text" name="lastname" th:field = "*{lastname}" id="last name" placeholder="Nazwisko" autocomplete="off">
+                <input type="text" name="lastname" th:field = "*{lastName}" id="last name" placeholder="Nazwisko" autocomplete="off">
             </div>
             <div class="formGroup">
                 <input type="email" name="email" th:fiels="*{email}" id="EMAIL ID" placeholder="Email" autocomplete="off">

@@ -14,8 +14,6 @@ import java.util.Map;
 @Service
 public class UserServiceImpl implements UserService {
 
-    private static final String DEFAULT_ROLE = "ROLE_USER";
-
     @Autowired
     private UserRepository userRepository;
 
@@ -23,17 +21,14 @@ public class UserServiceImpl implements UserService {
     private RoleRepository roleRepository;
 
     @Autowired
-    private PasswordEncoder passwordEncoder;
+    private PasswordEncoder bCryptPasswordEncoder;
 
-    public UserServiceImpl(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
 
     @Override
     public void saveUser(User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         user.setActive(1);
-        Role role = roleRepository.findByRoleType(DEFAULT_ROLE);
+        Role role = roleRepository.findByRoleType("ROLE_USER");
         user.setRole(role);
         userRepository.save(user);
     }
@@ -51,8 +46,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public void update(User user) {
         userRepository.findById(user.getId()).ifPresent(updateUser -> {
-            updateUser.setFirstname(user.getFirstname());
-            updateUser.setLastname(user.getLastname());
+            updateUser.setFirstName(user.getFirstName());
+            updateUser.setLastName(user.getLastName());
             updateUser.setEmail(user.getEmail());
             updateUser.setPhoneNumber(user.getPhoneNumber());
             userRepository.save(updateUser);
@@ -62,9 +57,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public void forgottenPassword(User user, Map<String, String> requestParam) {
         userRepository.findById(user.getId()).ifPresent(updateUserPassword -> {
-            updateUserPassword.setPassword(passwordEncoder.encode(requestParam.get("password")));
+            updateUserPassword.setPassword(bCryptPasswordEncoder.encode(requestParam.get("password")));
+            updateUserPassword.setResetToken(null);
             userRepository.save(updateUserPassword);
         });
-
     }
+
+
 }

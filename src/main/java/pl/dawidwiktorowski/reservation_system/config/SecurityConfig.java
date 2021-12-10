@@ -19,7 +19,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private DataSource dataSource;
-
+    @Autowired
     BCryptPasswordEncoder bCryptPasswordEncoder;
 
     protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
