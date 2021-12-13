@@ -35,7 +35,7 @@
             </div>
         </form>
 
-        <form th:action="@{/register}" th:object="${user}" method="post" class="signUp">
+        <form th:action="@{/api/v1/registration}" th:object="${user}" method="post" class="signUp">
             <div class="formGroup">
                 <input type="text" name="name" th:field = "*{firstName}" id="user name" placeholder="Imię" autocomplete="off">
             </div>
@@ -45,21 +45,21 @@
             <div class="formGroup">
                 <input type="email" name="email" th:fiels="*{email}" id="EMAIL ID" placeholder="Email" autocomplete="off">
             </div>
-            <div class="formGroup">
-                <input type="email" name="pemail" id="pemail" placeholder="Email" autocomplete="off">
-                <span class="text-danger align-middle" th:if="${pemailError}" th:text="${pemailError}"></span>
-            </div>
+<!--            <div class="formGroup">-->
+<!--                <input type="email" name="pemail" id="pemail" placeholder="Email" autocomplete="off">-->
+<!--                <span class="text-danger align-middle" th:if="${pemailError}" th:text="${pemailError}"></span>-->
+<!--            </div>-->
             <div class="formGroup">
                 <input type="tel" name="phoneNumber" pattern="(\+48)\d{9}" th:field="*{phoneNumber}" id="phone" placeholder="Phone" autocomplete="off">
             </div>
             <div class="formGroup">
                 <input type="password" name="password" th:field="*{password}" id="passwordd" placeholder="Hasło" autocomplete="off">
             </div>
-            <div class="formGroup">
-                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Potwierdź hasło"
-                       autocomplete="off">
-                <span class="text-danger align-middle" th:if="${passError}" th:text="${passError}"></span>
-            </div>
+<!--            <div class="formGroup">-->
+<!--                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Potwierdź hasło"-->
+<!--                       autocomplete="off">-->
+<!--                <span class="text-danger align-middle" th:if="${passError}" th:text="${passError}"></span>-->
+<!--            </div>-->
             <div class="formGroup">
                 <button type="submit" class="btn2">Zarejestruj</button>
             </div>
