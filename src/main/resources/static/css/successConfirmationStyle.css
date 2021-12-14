@@ -26,14 +26,19 @@ h1{
 }
 h2{
     margin-top: 25vh;
-    /*background-color: rgba(0, 0, 0, 0.5);*/
     font-size: 30px;
     padding: 10px;
 }
 h2:hover{
 
-    background-color: gray;
+    background-color: rgba(212, 217, 219, 0.8);
     border-radius: 50px;
     transition: 0.5s;
     border: 4px;
+}
+
+@media(max-width: 768px) {
+    h1{
+        font-size: 50px;
+    }
 }
