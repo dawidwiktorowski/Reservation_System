@@ -15,26 +15,8 @@
 <div class="container">
     <div class="form">
         <div class="btn">
-            <button class="loginBtn" >Zaloguj</button>
-            <button class="signUpBtn">Zarejestruj się</button>
+            <p class="signUpBtn">Zarejestruj się</p>
         </div>
-
-        <form th:action="@{/loginForm}" method="post" class="login">
-            <div class="formGroup">
-                <input type="email" name="email" id="EMAIL IDd" placeholder="Email" autocomplete="off">
-            </div>
-            <div class="formGroup">
-                <input type="password" name="password" id="password" placeholder="Hasło" autocomplete="off">
-            </div>
-            <div class="checkbox">
-                <input type="checkbox" name="checkbox" id="checkbox">
-                <span class="text">Zapamiętaj hasło na tym urządzeniu</span>
-            </div>
-            <div class="formGroup">
-                <button type="submit" class="btn2">Zaloguj</button>
-            </div>
-        </form>
-
         <form th:action="@{/api/v1/registration}" th:object="${user}" method="post" class="signUp">
             <div class="formGroup">
                 <input type="text" name="name" th:field = "*{firstName}" id="user name" placeholder="Imię" autocomplete="off">
@@ -45,12 +27,8 @@
             <div class="formGroup">
                 <input type="email" name="email" th:fiels="*{email}" id="EMAIL ID" placeholder="Email" autocomplete="off">
             </div>
-<!--            <div class="formGroup">-->
-<!--                <input type="email" name="pemail" id="pemail" placeholder="Email" autocomplete="off">-->
-<!--                <span class="text-danger align-middle" th:if="${pemailError}" th:text="${pemailError}"></span>-->
-<!--            </div>-->
             <div class="formGroup">
-                <input type="tel" name="phoneNumber" pattern="(\+48)\d{9}" th:field="*{phoneNumber}" id="phone" placeholder="Phone" autocomplete="off">
+                <input type="tel" name="phoneNumber" pattern="(\+48)\d{9}" th:field="*{phoneNumber}" id="phone" placeholder="Numer telefonu" autocomplete="off">
             </div>
             <div class="formGroup">
                 <input type="password" name="password" th:field="*{password}" id="passwordd" placeholder="Hasło" autocomplete="off">
@@ -67,7 +45,7 @@
     </div>
 </div>
 
-<script src="../static/js/form.js" th:src="@{/js/form.js} " type="text/javascript"></script>
+
 </body>
 
 
