@@ -36,12 +36,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/login").permitAll()
                 .defaultSuccessUrl("/", true)
                 .usernameParameter("email")
-                .passwordParameter("password")
                 .and()
                 .logout()
-                .logoutUrl("/?logout")
+                .logoutUrl("/logout")
                 .logoutSuccessUrl("/")
-                .and().csrf().disable();
+                .and()
+                .csrf().disable();
     }
 
     public void configure(WebSecurity webSecurity) {
