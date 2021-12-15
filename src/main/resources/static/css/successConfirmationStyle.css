@@ -24,12 +24,15 @@ h1{
     font-size: 70px;
     margin-top: 20vh;
 }
-h2{
+a{
     margin-top: 25vh;
     font-size: 30px;
     padding: 10px;
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
 }
-h2:hover{
+a:hover{
 
     background-color: rgba(212, 217, 219, 0.8);
     border-radius: 50px;
