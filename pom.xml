@@ -74,7 +74,6 @@
             <groupId>com.twilio.sdk</groupId>
             <artifactId>twilio</artifactId>
             <version>8.23.0</version>
-            <scope>runtime</scope>
         </dependency>
 
     </dependencies>
