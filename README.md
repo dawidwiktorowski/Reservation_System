@@ -41,11 +41,11 @@
 - [X] Created controller
 - [X] Created repository
 - [X] Created service
-- [ ] Created main view
+- [x] Created main view
 - [x] Created login view
 - [x] Created registry view
 - [x] Created reservation list view
-- [ ] Created my reservation view
+- [x] Created my reservation view
 # Preview
 
 <h1 align="center">Main view</h1>
