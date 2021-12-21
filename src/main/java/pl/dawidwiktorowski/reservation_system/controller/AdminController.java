@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.dawidwiktorowski.reservation_system.model.Category;
 import pl.dawidwiktorowski.reservation_system.model.SubCategory;
 import pl.dawidwiktorowski.reservation_system.service.CategoryServiceInterface;
@@ -41,6 +38,12 @@ public class AdminController {
         return "admin/addcategory";
     }
 
+    @PostMapping(value = "/addCategory")
+    public String addCategory(@ModelAttribute Category category) {
+        categoryServiceInterface.add(category);
+        return "redirect:/admin/main";
+    }
+
     @GetMapping(value = "/addSubCategory")
     public String showAddSubcategoryForm(Model model) {
         List<Category> categories = categoryServiceInterface.findAll();
@@ -49,10 +52,22 @@ public class AdminController {
         return "admin/addsubcategory";
     }
 
-    @PostMapping(value = "/addCategory")
-    public String addCategory(@ModelAttribute Category category) {
-        categoryServiceInterface.add(category);
+    @PostMapping(value = "/addSubCategory")
+    public String addSubCategory(@ModelAttribute SubCategory subCategory) {
+        subCategoryServiceInterface.add(subCategory);
         return "redirect:/admin/main";
+    }
+
+    @GetMapping(value = "/reservation")
+    public String showReservation(Model model) {
+        model.addAttribute("reservations", reservationServiceInterface.showAllReservationWithStatusFalse());
+        return "admin/reservationListForm";
+    }
+
+    @GetMapping(value = "/reservation/{reservationId}")
+    public String confirmReservation(@PathVariable("reservationId") Long id) {
+        reservationServiceInterface.confirmReservation(id);
+        return "redirect:/admin/reservation";
     }
 
 }
