@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css/StaticUserReservationForm.css"
+          th:href="@{/css/StaticUserReservationForm.css}">
+    <meta charset="UTF-8">
+    <title>Moje rezerwacje</title>
+</head>
+
+
+<body>
+<header>
+
+    <hgroup class="welcome">
+        <h1>Moje rezerwacje</h1>
+
+
+    </hgroup>
+</header>
+
+
+<form th:action="@{userReservation}" method="get" th:object="${userReservations}">
+    <table class="content-table" >
+        <thead>
+        <tr>
+            <th>Nazwa usługi</th>
+            <th>Data i godzina rezerwacji</th>
+            <th colspan="2"></th>
+
+        </tr>
+        </thead>
+        <tbody th:each="userReservation : ${userReservations}">
+
+
+        <tr>
+            <td th:text="${userReservation.subCategory.name}"></td>
+            <td th:text="${userReservation.dateTime}"></td>
+
+
+            <td><a class="reg" th:href="@{editReservation/{id} (id = ${userReservation.id})}">Edytuj</a></td>
+            <td><a class="reg" th:href="@{userReservation/{reservationId} (reservationId = ${userReservation.id})}">Usuń</a>
+            </td>
+        </tr>
+        </tbody>
+
+
+    </table>
+    <div>
+        <a class="home" th:href="@{/}">Strona główna</a>
+    </div>
+</form>
+
+</body>
+
+</html>
