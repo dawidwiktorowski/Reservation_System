@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/styleAdminPanel.css" th:href="@{/css/styleAdminPanel.css}">
+</head>
+
+<body>
+<div th:action="@{main}" th:object="${categories}">
+    <section>
+        <div class="category" th:each="category : ${categories}">
+            <h2 th:text="${category.name}"></h2>
+            <div class="subcategory" th:each="subcategory : ${category.subCategoryList}">
+                <p th:text="${subcategory.name} + ' - ' + ${subcategory.price} + zł"></p>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
