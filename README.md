@@ -46,6 +46,8 @@
 - [x] Created registry view
 - [x] Created reservation list view
 - [x] Created my reservation view
+- [ ] Created admin panel
+- [ ] Created reservation view
 # Preview
 
 <h1 align="center">Main view</h1>
@@ -64,6 +66,10 @@
 <h1 align="center">Reservation view</h1>
 
 ![Reservation form](./screenshots/ReservationView.png)
+
+<h1 align="center">Confirm email</h1>
+
+![Confirm email](./screenshots/ConfirmEmail.png)
 
 <h1 align="center">Success confirm email</h1>
 
