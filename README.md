@@ -80,4 +80,6 @@
 
 <h1 align="center">SMS booking acceptance</h1>
 
-![SMS_booking_acceptance](./screenshots/SMS_acceptance.jpg)
+<p align="center">
+<img alt="SMS_booking_acceptance" src="./screenshots/SMS_acceptance.jpg" />
+</p>
