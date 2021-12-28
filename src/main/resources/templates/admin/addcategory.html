@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/styleCategory.css" th:href="@{/css/styleCategory.css}">
+  <meta charset="UTF-8">
+  <title>Dodaj kategorię</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/styleCategory.css" th:href="@{/css/styleCategory.css}">
 </head>
 <body>
 <form th:action="@{/admin/addCategory}" method="post" th:object="${category}">
-    <label>Wpisz kategorie</label><br>
-    <label>
-        <input type="text" th:field="*{name}" required maxlength="40">
-    </label><br>>
-    <button class="add" type="submit" value="Add">Dodaj</button>
-    <a class="home" th:href="@{main}">Powrót</a>
+  <label>Wpisz kategorie</label><br>
+  <label>
+    <input type="text" th:field="*{name}" required maxlength="40">
+  </label><br>>
+  <button class="add" type="submit" value="Add">Dodaj</button>
+  <a class="home" th:href="@{main}">Powrót</a>
 </form>
 </body>
 </html>
