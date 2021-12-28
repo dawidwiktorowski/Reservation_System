@@ -48,6 +48,10 @@ public class AppUser implements UserDetails {
         this.phoneNumber = phoneNumber;
     }
 
+    public Long getId() {
+        return id;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         SimpleGrantedAuthority authority = new SimpleGrantedAuthority(
@@ -94,16 +98,17 @@ public class AppUser implements UserDetails {
         return enabled;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         AppUser appUser = (AppUser) o;
-        return id != null && Objects.equals(id, appUser.id);
+        return Objects.equals(id, appUser.id) && Objects.equals(firstName, appUser.firstName) && Objects.equals(lastName, appUser.lastName) && Objects.equals(email, appUser.email) && Objects.equals(password, appUser.password) && Objects.equals(phoneNumber, appUser.phoneNumber) && appUserRole == appUser.appUserRole && Objects.equals(locked, appUser.locked) && Objects.equals(enabled, appUser.enabled);
     }
 
     @Override
     public int hashCode() {
-        return getClass().hashCode();
+        return Objects.hash(id, firstName, lastName, email, password, phoneNumber, appUserRole, locked, enabled);
     }
 }
