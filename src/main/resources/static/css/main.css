@@ -10,7 +10,6 @@
 body {
     background-image: url(../images/BeautifulWoman.jpg);
     background-size: cover;
-
     height: 100vh;
 }
 
@@ -47,7 +46,7 @@ ul li {
 }
 
 ul li a {
-    font-size: 1.3rem;
+    font-size: 13px;
     padding: 8px 10px;
 }
 
