@@ -28,10 +28,11 @@
             <li><a href="">Usługi</a></li>
             <li><a href="">Galeria</a></li>
             <li><a href="">Kontakt</a></li>
+            <li><a sec:authorize="isAuthenticated()" th:href="@{/reservation/userReservation}">Moje Rezerwacje</a></li>
+            <li><a sec:authorize="isAuthenticated()" th:href="@{/reservation/addReservation}">Zarezerwuj</a></li>
+            <li><a sec:authorize="isAuthenticated()" th:href="@{/reservation/addReservation}">Konto</a></li>
             <li><a sec:authorize="isAnonymous()" th:href="@{/login}">Zaloguj</a></li>
             <li><a sec:authorize="isAuthenticated()" th:href="@{/logout}">Wyloguj</a></li>
-            <li><a sec:authorize="isAuthenticated()" th:href="@{/reservation/addReservation}">rezerwuj</a></li>
-            <li><a sec:authorize="isAuthenticated()" th:href="@{/reservation/userReservation}">Rezerwacje</a></li>
         </ul>
     </nav>
 </header>
