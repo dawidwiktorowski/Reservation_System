@@ -76,4 +76,8 @@
 
 <h1 align="center">User reservation</h1>
 
-![Reservation form](./screenshots/UserReservation.png)
+![User_Reservation form](./screenshots/UserReservation.png)
+
+<h1 align="center">SMS booking acceptance</h1>
+
+![SMS_booking_acceptance](./screenshots/SMS_acceptance.jpg)
