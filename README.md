@@ -62,11 +62,6 @@
 
 ![Login form](./screenshots/Logging.png)
 
-
-<h1 align="center">Reservation view</h1>
-
-![Reservation form](./screenshots/ReservationView.png)
-
 <h1 align="center">Confirm email</h1>
 
 ![Confirm email](./screenshots/ConfirmEmail.png)
@@ -74,3 +69,11 @@
 <h1 align="center">Success confirm email</h1>
 
 ![Confirm email](./screenshots/Success.png)
+
+<h1 align="center">Reservation view</h1>
+
+![Reservation form](./screenshots/ReservationView.png)
+
+<h1 align="center">User reservation</h1>
+
+![Reservation form](./screenshots/UserReservation.png)
