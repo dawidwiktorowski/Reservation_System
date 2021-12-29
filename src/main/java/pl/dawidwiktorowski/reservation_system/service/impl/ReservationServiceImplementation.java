@@ -17,6 +17,8 @@ import java.util.List;
 @AllArgsConstructor
 public class ReservationServiceImplementation implements ReservationServiceInterface {
 
+    private static final String DATE_FORMAT = "dd-MM-yyyy hh:mm a";
+
     private ReservationRepository reservationRepository;
 
     private TwilioConfiguration twilioConfiguration;
@@ -29,7 +31,7 @@ public class ReservationServiceImplementation implements ReservationServiceInter
         reservation.setStatus(false);
         reservation.setAppUser(appUser);
         reservationRepository.save(reservation);
-
+        emailService.reservationRequestEmailSend(appUser, reservation.getDateTime(), reservation.getSubCategory());
     }
 
     @Override
@@ -39,7 +41,7 @@ public class ReservationServiceImplementation implements ReservationServiceInter
 
     @Override
     public void confirmReservation(Long id) {
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MM-dd-yyyy hh:mm a");
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(DATE_FORMAT);
         reservationRepository.findById(id).ifPresent(x -> {
             x.setStatus(true);
             Message.creator(
@@ -53,19 +55,19 @@ public class ReservationServiceImplementation implements ReservationServiceInter
     }
 
     @Override
-    public List<Reservation> showAllUserReservation(Long app_user_id) {
-        return null;
+    public List<Reservation> showAllUserReservation(Long userId) {
+        return reservationRepository.findAllByStatusTrueAndAppUserId(userId);
     }
 
     @Override
     public void deleteReservation(Long id) {
         reservationRepository.findById(id).ifPresent(reservation -> {
-            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MM-dd-yyyy hh:mm a");
+            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(DATE_FORMAT);
             Message.creator(
                     new PhoneNumber(reservation.getAppUser().getPhoneNumber()),
                     new PhoneNumber(twilioConfiguration.getTrialNumber()),
                     "Twoja rezerwacja na: " + reservation.getSubCategory().getName() + " w dniu "
-                    + dateTimeFormatter.format(reservation.getDateTime()) + " była odwołana").create();
+                    + dateTimeFormatter.format(reservation.getDateTime()) + " została odwołana").create();
             reservationRepository.delete(reservation);
         });
 
@@ -78,6 +80,13 @@ public class ReservationServiceImplementation implements ReservationServiceInter
 
     @Override
     public void update(Reservation reservation) {
-
+        reservationRepository.findById(reservation.getId()).ifPresent(reservation1 -> {
+            reservation1.setSubCategory(reservation.getSubCategory());
+            reservation1.setDateTime(reservation.getDateTime());
+            reservation1.setStatus(false);
+            reservationRepository.save(reservation1);
+            emailService.sendEmailWhenUserUpdateReservation(reservation1.getAppUser(), reservation1.getDateTime()
+                    , reservation1.getSubCategory());
+        });
     }
 }
