@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styleReservationListForm.css" th:href="@{/css/styleReservationListForm.css}">
+</head>
+<body>
+<table id="reservation">
+    <thead>
+    <tr>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>Usługa</th>
+        <th>Data rezerwacji</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody th:each="reservation : ${reservations}">
+    <tr>
+        <td th:text="${reservation.appUser.firstName}"></td>
+        <td th:text="${reservation.appUser.lastName}"></td>
+        <td th:text="${reservation.subCategory.name}"></td>
+        <td th:text="${#temporals.format(reservation.dateTime, 'dd-MM-yyyy h:mm a')}"></td>
+        <td><a class="accept" th:href="@{reservation/{reservationId} (reservationId = ${reservation.id})}">Akceptuj</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
