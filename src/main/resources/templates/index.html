@@ -31,11 +31,11 @@
                     <li><a href="#projects" data-after="Galeria">Galeria</a></li>
                     <li><a href="#about" data-after="Onas">O nas</a></li>
                     <li><a href="#contact" data-after="Kontakt">Kontakt</a></li>
-                    <li><a sec:authorize="isAuthenticated()" th:href="@{/reservation/userReservation}">Moje Rezerwacje</a></li>
-                    <li><a sec:authorize="isAuthenticated()" th:href="@{/reservation/addReservation}">Zarezerwuj</a></li>
-                    <li><a sec:authorize="isAuthenticated()" th:href="@{/reservation/addReservation}">Konto</a></li>
-                    <li><a sec:authorize="isAnonymous()" th:href="@{/login}">Zaloguj</a></li>
-                    <li><a sec:authorize="isAuthenticated()" th:href="@{/logout}">Wyloguj</a></li>
+                    <li><a sec:authorize="isAuthenticated()" th:href="@{/reservation/userReservation}" data-after="MojeRezerwacje">Rezerwacje</a></li>
+                    <li><a sec:authorize="isAuthenticated()" th:href="@{/reservation/addReservation}" data-after="Zarezerwuj">Zarezerwuj</a></li>
+                    <li><a sec:authorize="isAuthenticated()" th:href="@{/reservation/addReservation}" data-after="Konto">Konto</a></li>
+                    <li><a sec:authorize="isAnonymous()" th:href="@{/login}" data-after="Zaloguj">Zaloguj</a></li>
+                    <li><a sec:authorize="isAuthenticated()" th:href="@{/logout}" data-after="Wyloguj">Wyloguj</a></li>
                 </ul>
             </div>
         </div>
@@ -81,12 +81,11 @@
             <div class="service-item">
                 <div class="icon"><img src="https://img.icons8.com/external-linector-flat-linector/64/000000/external-treatment-personal-hygiene-linector-flat-linector.png"  alt="img"/>
                 </div>
-                <h2>Zabiegi na twarz i ciało</h2>
-                <p>Ciało w zależności od wieku, trybu życia i indywidualnych predyspozycji, potrzebuje odpowiedniej
-                    pielęgnacji. Profesjonalne usługi kosmetyczne z zakresu medycyny estetycznej,poprawią wygląd i
+                <h2>Twarz i ciało</h2>
+                <p>Ciało w zależności od wieku, trybu życia, potrzebuje odpowiedniej
+                    pielęgnacji. Profesjonalne usługi kosmetyczne z zakresu medycyny estetycznej, poprawią wygląd i
                     kondycję całego ciała. Odpowiednio dobrany zabieg pomoże w walce z cellulitem, tkanką
-                    tłuszczową, wiotką i pozbawioną
-                    jędrności skórą lub rozstępami.</p>
+                    tłuszczową, wiotką i pozbawioną jędrności skórą.</p>
             </div>
             <div class="service-item">
                 <div class="icon">
@@ -99,10 +98,10 @@
             </div>
             <div class="service-item">
                 <div class="icon"><img src="https://img.icons8.com/ios/100/000000/eyelashes-2d.png" alt="img"/></div>
-                <h2>Stylizacja brwi i rzęsy</h2>
+                <h2>Brwi i rzęsy</h2>
                 <p>Piękne, podkreślone brwi i rzęsy stanowią oprawę oczu i nadają charakteru całej twarzy. W naszym
                     salonie wykonujemy szereg usług z zakresu pielęgnacji okolic oczu. Zapraszamy na hennę i
-                    regulację brwi i rzęs oraz na makijaż permanentny. Osobom pragnącym nadać spojrzeniu zalotnego
+                    regulację brwi i rzęs. Osobom pragnącym nadać spojrzeniu zalotnego
                     wyglądu polecamy usługi przedłużania rzęs 1:1, 2:1.</p>
             </div>
         </div>
@@ -128,7 +127,7 @@
                         tym, że każdą warstwę lakieru (bazę, kolor, top) utwardzamy pod lampą UV lub UV LED.</p>
                 </div>
                 <div class="project-img">
-                    <img src="../static/images/Nails.jpg" alt="img">
+                    <img th:src="@{/images/Nails.jpg}" src="../static/images/Nails.jpg" alt="img">
                 </div>
             </div>
             <div class="project-item">
@@ -142,7 +141,7 @@
                         pobudzane są mechanizmy regeneracji skóry.</p>
                 </div>
                 <div class="project-img">
-                    <img src="../static/images/Zabieg.jpg" alt="img">
+                    <img th:src="@{/images/Zabieg.jpg}" src="../static/images/Zabieg.jpg" alt="img">
                 </div>
             </div>
             <div class="project-item">
@@ -155,7 +154,7 @@
                         grubość, stopień podkręcenia, a nawet objętość rzęs.</p>
                 </div>
                 <div class="project-img">
-                    <img src="../static/images/Rzęsy.jpg" alt="img">
+                    <img th:src="@{/images/Rzęsy.jpg}" src="../static/images/Rzęsy.jpg" alt="img">
                 </div>
             </div>
             <div class="project-item">
