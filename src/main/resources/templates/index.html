@@ -168,7 +168,7 @@
                         kolejnych etapach zabiegu jest regeneracja.</p>
                 </div>
                 <div class="project-img">
-                    <img src="../static/images/eyebrows.jpg" alt="img">
+                    <img th:src="@{/images/eyebrows.jpg}" src="../static/images/eyebrows.jpg" alt="img">
                 </div>
             </div>
         </div>
@@ -182,7 +182,7 @@
     <div class="about container">
         <div class="col-left">
             <div class="about-img">
-                <img th:src="@{/images/cosmetologist.jpg}" alt="img">
+                <img th:src="@{/images/cosmetologist.jpg}" alt="img" src="../static/images/cosmetologist.jpg">
             </div>
         </div>
         <div class="col-right">
@@ -207,7 +207,7 @@
         </div>
         <div class="contact-items">
             <div class="contact-item">
-                <div class="icon"><img th:src="@{/images/contact2.png}" alt="img"></div>
+                <div class="icon"><img th:src="@{/images/contact2.png}" alt="img" src="../static/images/contact2.png"></div>
                 <div class="contact-info">
                     <h1>Phone</h1>
                     <h2>+48 789 456 123</h2>
@@ -215,7 +215,7 @@
                 </div>
             </div>
             <div class="contact-item">
-                <div class="icon"><img th:src="@{/images/contact1.png}" alt="img"></div>
+                <div class="icon"><img th:src="@{/images/contact1.png}" alt="img" src="../static/images/contact1.png"></div>
                 <div class="contact-info">
                     <h1>Email</h1>
                     <h2>nowa.wyspa22@gmail.com</h2>
@@ -223,7 +223,7 @@
                 </div>
             </div>
             <div class="contact-item">
-                <div class="icon"><img th:src="@{/images/location.png}" alt="img"></div>
+                <div class="icon"><img th:src="@{/images/location.png}" alt="img" src="../static/images/location.png"></div>
                 <div class="contact-info">
                     <h1>Address</h1>
                     <h2>Zgierz</h2>
@@ -244,17 +244,17 @@
         <h2>Bo piękno jest naszą pasją</h2>
         <div class="social-icon">
             <div class="social-item">
-                <a href="#"><img th:src="@{/images/facebook_icon.png}" alt="img"></a>
+                <a href="#"><img th:src="@{/images/facebook_icon.png}" alt="img" src="../static/images/facebook_icon.png"></a>
             </div>
             <div class="social-item">
-                <a href="#"><img src="../static/images/instagram_icon.png" alt="img"></a>
+                <a href="#"><img th:src="@{/images/instagram_icon.png}" src="../static/images/instagram_icon.png" alt="img"></a>
             </div>
         </div>
         <p>Copyright 2022. All rights reserved</p>
     </div>
 </section>
 <!-- End Footer Section -->
-<script src="../static/js/app.js"></script>
+<script th:src="@{/js/app.js}" src="../static/js/app.js"></script>
 </body>
 
 </html>
