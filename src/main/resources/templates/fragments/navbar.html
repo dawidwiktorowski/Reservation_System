@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<th:block th:fragment="nav">
+    <section id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+                    <a th:href="@{main}">
+                        <h1><span>A</span>dmin <span>P</span>anel</h1>
+                    </a>
+                </div>
+                <div class="nav-list">
+                    <div class="hamburger">
+                        <div class="bar"></div>
+                    </div>
+                    <ul>
+                        <li><a th:href="@{addCategory}" data-after="DodajKategorię">Dodaj
+                            kategorię</a></li>
+                        <li><a th:href="@{addSubCategory}"
+                               data-after="DodajPodategorię">Dodaj podkategorię</a></li>
+                        <li><a th:href="@{reservation}" data-after="Rezerwacje">Rezerwacje</a>
+                        </li>
+                        <li><a th:href="@{/logout}" data-after="Wyloguj">Wyloguj</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</th:block>
+</body>
+</html>
