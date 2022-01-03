@@ -21,7 +21,7 @@ public class CategoryServiceImplementation  implements CategoryServiceInterface 
 
     @Override
     public List<Category> findAll() {
-        return null;
+        return categoryRepository.findAll();
     }
 
     @Override
