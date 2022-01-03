@@ -2,62 +2,56 @@
 <html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Zmiana rezerwacji</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
-    <link rel="stylesheet" media="screen" th:href="@{/css/StaticReservationForm.css}"
-          href="/static/css/StaticReservationForm.css" type="text/css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
-    <script src="/static/js/scriptDateTimePicker.js" th:src="@{/js/scriptDatePicker.js}"></script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/user/StaticReservationForm.css" th:href="@{/css/user/StaticReservationForm.css}"
+          type="text/css">
+    <script src="/static/js/scriptDateTimePicker.js" th:src="@{/js/scriptDateTimePicker.js}"></script>
 </head>
 <body>
-<header>
+<div class="container">
+    <div class="form">
 
-    <hgroup class="welcome">
-        <h1>Salon Kosmetyczny "Nowa WySpa"</h1>
-        <h2><span>Wasze piękno jest</span> naszą pasją</h2>
-        <h3>Zmiana rezerwacji</h3>
+        <h1 class="title-name">Zmiana rezerwacji</h1>
 
-    </hgroup>
-</header>
+        <form method="post" th:object="${editReservation}">
 
-<form method="post" th:object="${editReservation}">
-    <label>Wybierz usługe</label><br>
-    <label>
-        <select class="select" th:field="*{subCategory}" required>
-            <optgroup th:each="category : ${categoryList}" th:label="${category.name}" label="">
-                <option th:each="subcategory : ${category.subCategoryList}" th:value="${subcategory.id}"
-                        th:text="${subcategory.name}"></option>
-            </optgroup>
-        </select>
-    </label><br>
-    <label>Wybierz date i czas</label><br>
-
-    <div class="containerEdit">
-        <div class="form-group">
-            <div class='input-group date' id='datetimepicker1'>
-                <label>
-                    <input type='text' th:field="*{dateTime}" required class="form-control"/>
-                </label>
-                <span class="input-group-addon">
-            <span class="glyphicon glyphicon-calendar"></span>
-          </span>
+            <div class="formGroup">
+                <select class="select" th:field="*{subCategory}" required>
+                    <optgroup th:each="category : ${categoryList}" th:label="${category.name}">
+                        <option th:each="subcategory : ${category.subCategoryList}" th:value="${subcategory.id}"
+                                th:text="${subcategory.name}"></option>
+                    </optgroup>
+                </select>
             </div>
-        </div>
-    </div><br>
 
-    <div>
-        <button class="reg" type="submit" value="Zmiana rezerwacji">Zmiana rezerwacji</button>
+            <div class="formGroup">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' th:field="*{dateTime}" required class="form-control"/>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+
+
+            <div class="formGroup">
+
+                <button class="reg1" type="submit" value="Rezerwacja">Zmiana rezerwacji</button>
+            </div>
+            <div class="formGroup">
+                <a class="home" th:href="@{/}">Strona główna</a>
+            </div>
+        </form>
     </div>
-    <br>
-    <div>
-        <a class="home" th:href="@{/}">Strona główna</a>
-    </div>
-</form>
+</div>
 </body>
 </html>
