@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <link rel="stylesheet" type="text/css" href="/static/css/styleSubCategory.css" th:href="@{/css/styleSubCategory.css}">
-  <link rel="stylesheet" type="text/css" href="/static/css/styleNavbar.css" th:href="@{/css/styleNavbar.css}">
+    <meta charset="UTF-8">
+    <title>Nowa podkategoria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/css/styleSubCategory.css"
+          th:href="@{/css/styleSubCategory.css}">
 </head>
 <body>
 
 <div class="container">
-  <div class="form">
+    <div class="form">
 
-    <h1 class="signUpBtn">Podaj nową podkategorię</h1>
+        <h1 class="titleName">Podaj nową podkategorię</h1>
 
-    <form th:action="@{/admin/addSubCategory}" method="post" th:object="${subcategory}">
+        <form th:action="@{/admin/addSubCategory}" method="post" th:object="${subcategory}">
 
-      <div class="formGroup">
-        <input type="text" th:field="*{name}" required maxlength="40" placeholder="Nazwa podkategorii" autocomplete="off">
-      </div>
+            <div class="formGroup">
+                <input type="text" th:field="*{name}" required maxlength="40" placeholder="Nazwa podkategorii"
+                       autocomplete="off">
+            </div>
 
-      <div class="formGroup">
-        <input type="text" th:field="*{price}" required placeholder="Cena usługi" autocomplete="off">
-      </div>
+            <div class="formGroup">
+                <input type="text" th:field="*{price}" required placeholder="Cena usługi" autocomplete="off">
+            </div>
 
-      <div class="formGroup">
-        <label>
-          <select th:field="*{category}" required>
-            <option value=""> --</option>
-            <option th:each="category : ${categories}"
-                    th:value="${category.id}"
-                    th:text="${category.name}"></option>
-          </select>
-        </label><br>
-      </div>
+            <div class="formGroup">
+                <label>
+                    <select th:field="*{category}" required>
+                        <option value=""> --</option>
+                        <option th:each="category : ${categories}"
+                                th:value="${category.id}"
+                                th:text="${category.name}"></option>
+                    </select>
+                </label>
+            </div>
 
-      <div class="formGroup">
-        <button class="reg" type="submit" value="Add">Dodaj</button>
-      </div>
-      <div class="formGroup">
-        <a class="home" th:href="@{main}">Powrót</a>
-      </div>
-    </form>
-  </div>
+            <div class="formGroup">
+                <button class="reg" type="submit" value="Add">Dodaj</button>
+            </div>
+            <div class="formGroup">
+                <a class="home" th:href="@{main}">Powrót</a>
+            </div>
+        </form>
+    </div>
 </div>
 
 <script th:src="@{/js/app.js}" src="/static/js/app.js"></script>

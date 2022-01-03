@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Dodaj kategorię</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/static/css/styleCategory.css" th:href="@{/css/styleCategory.css}">
-    <link rel="stylesheet" type="text/css" href="/static/css/styleNavbar.css" th:href="@{/css/styleNavbar.css}">
 </head>
 <body>
 
 <div class="container">
     <div class="form">
 
-        <h1 class="signUpBtn">Podaj nową kategorię</h1>
+        <h1 class="titleName">Podaj nową kategorię</h1>
 
         <form th:action="@{/admin/addCategory}" method="post" th:object="${category}">
 
             <div class="formGroup">
-                <input type="text" th:field="*{name}" required maxlength="40" placeholder="Nazwa kategorii" autocomplete="off">>
+                <input type="text" th:field="*{name}" required maxlength="40" placeholder="Nazwa kategorii"
+                       autocomplete="off">>
             </div>
 
             <div class="formGroup">

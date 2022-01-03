@@ -40,7 +40,7 @@ hgroup{
 }
 
 .content-table thead tr {
-    background-color: #60a3bc;
+    background-color: #20bf6b;
     color: white;
     text-align: center;
     font-weight: bold;
@@ -53,12 +53,12 @@ hgroup{
 }
 
 .content-table tbody tr:last-of-type {
-    border-bottom: 2px solid #60a3bc;
+    border: 4px solid #20bf6b;
 }
 
 .content-table tbody tr.active-row {
     font-weight: bold;
-    color: #60a3bc;
+    color: #20bf6b;
 }
 
 .reg {
@@ -66,7 +66,7 @@ hgroup{
     text-transform: uppercase;
     background: #ffffff;
     padding: 8px;
-    border: 4px solid #60a3bc !important;
+    border: 4px solid #20bf6b !important;
     text-decoration: none;
     border-radius: 6px;
     display: inline-block;

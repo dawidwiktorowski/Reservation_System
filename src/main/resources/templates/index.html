@@ -28,8 +28,8 @@
                 <ul>
                     <li><a href="#hero" data-after="Home">Home</a></li>
                     <li><a href="#services" data-after="Usługi">Usługi</a></li>
-                    <li><a href="#projects" data-after="Galeria">Galeria</a></li>
-                    <li><a href="#about" data-after="Onas">O nas</a></li>
+                    <li><a sec:authorize="isAnonymous()" href="#projects" data-after="Galeria">Galeria</a></li>
+                    <li><a sec:authorize="isAnonymous()" href="#about" data-after="Onas">O nas</a></li>
                     <li><a href="#contact" data-after="Kontakt">Kontakt</a></li>
                     <li><a sec:authorize="isAuthenticated()" th:href="@{/reservation/userReservation}" data-after="MojeRezerwacje">Rezerwacje</a></li>
                     <li><a sec:authorize="isAuthenticated()" th:href="@{/reservation/addReservation}" data-after="Zarezerwuj">Zarezerwuj</a></li>
@@ -43,9 +43,9 @@
 </section>
 <!-- End Header -->
 
-<!-- Hero Section -->
-<section id="hero">
-    <div class="hero container">
+<!-- Name Section -->
+<section id="name">
+    <div class="name container">
         <div>
             <h1>Witamy, <span></span></h1>
             <h1>Salon kosmetyczny <span></span></h1>
@@ -54,7 +54,7 @@
         </div>
     </div>
 </section>
-<!-- End Hero Section -->
+<!-- End Name Section -->
 
 <!-- Service Section -->
 <section id="services">

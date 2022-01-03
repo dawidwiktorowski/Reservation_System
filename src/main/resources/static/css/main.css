@@ -165,7 +165,6 @@ p {
 #header .hamburger {
     height: 60px;
     width: 60px;
-    display: inline-block;
     border: 3px solid white;
     border-radius: 50%;
     position: relative;
@@ -227,8 +226,8 @@ p {
 /* End Header Section */
 
 
-/*Hero Section*/
-#hero {
+/*Name Section*/
+#name {
     background-image: url(../images/BeautifulWoman.jpg);
     background-size: cover;
     background-position: top center;
@@ -236,7 +235,7 @@ p {
     z-index: 1;
 }
 
-#hero::after {
+#name::after {
     content: '';
     position: absolute;
     left: 0;
@@ -248,14 +247,14 @@ p {
     z-index: -1;
 }
 
-#hero .hero {
+#name .name {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 50px;
     justify-content: flex-start;
 }
 
-#hero h1 {
+#name h1 {
     display: block;
     width: fit-content;
     font-size: 4rem;
@@ -265,20 +264,20 @@ p {
     animation-delay: 1s;
 }
 
-#hero h1:nth-child(1) {
+#name h1:nth-child(1) {
     animation-delay: 1s;
 }
 
-#hero h1:nth-child(2) {
+#name h1:nth-child(2) {
     animation-delay: 2s;
 }
 
-#hero h1:nth-child(3) {
+#name h1:nth-child(3) {
     animation: text_reveal_name .5s ease forwards;
     animation-delay: 3s;
 }
 
-#hero h1 span {
+#name h1 span {
     position: absolute;
     top: 0;
     left: 0;
@@ -289,19 +288,19 @@ p {
     animation-delay: .5s;
 }
 
-#hero h1:nth-child(1) span {
+#name h1:nth-child(1) span {
     animation-delay: .5s;
 }
 
-#hero h1:nth-child(2) span {
+#name h1:nth-child(2) span {
     animation-delay: 1.5s;
 }
 
-#hero h1:nth-child(3) span {
+#name h1:nth-child(3) span {
     animation-delay: 2.5s;
 }
 
-/*End Hero Section*/
+/*End Name Section*/
 
 /*Services Section*/
 
@@ -550,7 +549,6 @@ p {
 
 #contact .icon {
     width: 70px;
-    margin: 0 auto;
     margin-bottom: 10px;
 }
 
@@ -669,13 +667,13 @@ p {
         font-size: 7rem;
     }
 
-    /* Hero */
+    /* Name */
 
-    #hero h1 {
+    #name h1 {
         font-size: 5rem;
     }
 
-    /* End Hero */
+    /* End Name */
 
     /* Services Section */
 
