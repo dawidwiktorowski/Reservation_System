@@ -17,7 +17,7 @@
     <div class="header container">
         <div class="nav-bar">
             <div class="brand">
-                <a href="#hero">
+                <a href="#name">
                     <h1><span>N</span>owa Wy<span>SPA</span></h1>
                 </a>
             </div>
@@ -26,14 +26,20 @@
                     <div class="bar"></div>
                 </div>
                 <ul>
-                    <li><a href="#hero" data-after="Home">Home</a></li>
+                    <li><a href="#name" data-after="Home">Home</a></li>
                     <li><a href="#services" data-after="Usługi">Usługi</a></li>
                     <li><a sec:authorize="isAnonymous()" href="#projects" data-after="Galeria">Galeria</a></li>
                     <li><a sec:authorize="isAnonymous()" href="#about" data-after="Onas">O nas</a></li>
                     <li><a href="#contact" data-after="Kontakt">Kontakt</a></li>
-                    <li><a sec:authorize="isAuthenticated()" th:href="@{/reservation/userReservation}" data-after="MojeRezerwacje">Rezerwacje</a></li>
-                    <li><a sec:authorize="isAuthenticated()" th:href="@{/reservation/addReservation}" data-after="Zarezerwuj">Zarezerwuj</a></li>
-                    <li><a sec:authorize="isAuthenticated()" th:href="@{/reservation/addReservation}" data-after="Konto">Konto</a></li>
+                    <li><a sec:authorize="isAuthenticated()"
+                           th:if="${#authorization.expression('hasAuthority(''ADMIN'')')}" th:href="@{/admin/main}"
+                           data-after="Admin">Admin</a></li>
+                    <li><a sec:authorize="hasAuthority('USER')" th:href="@{/reservation/userReservation}"
+                           data-after="MojeRezerwacje">Rezerwacje</a></li>
+                    <li><a sec:authorize="hasAuthority('USER')" th:href="@{/reservation/addReservation}"
+                           data-after="Zarezerwuj">Zarezerwuj</a></li>
+                    <li><a sec:authorize="isAuthenticated()" th:href="@{/reservation/addReservation}"
+                           data-after="Konto">Konto</a></li>
                     <li><a sec:authorize="isAnonymous()" th:href="@{/login}" data-after="Zaloguj">Zaloguj</a></li>
                     <li><a sec:authorize="isAuthenticated()" th:href="@{/logout}" data-after="Wyloguj">Wyloguj</a></li>
                 </ul>
@@ -71,7 +77,8 @@
         </div>
         <div class="service-bottom">
             <div class="service-item">
-                <div class="icon"><img src="https://img.icons8.com/color/96/000000/hand-skin-type-3.png"  alt="img"/></div>
+                <div class="icon"><img src="https://img.icons8.com/color/96/000000/hand-skin-type-3.png" alt="img"/>
+                </div>
                 <h2>Manicure</h2>
                 <p>Oferujemy swoim klientom niezwykle trwały i starannie wykonany pedicure oraz hybrydowy
                     manicure. Do wszystkich zabiegów używane są preparaty najwyższej jakości. Domeną pracowników,
@@ -79,7 +86,9 @@
                     manicure był przyjemnie spędzoną chwilą dla Ciebie.</p>
             </div>
             <div class="service-item">
-                <div class="icon"><img src="https://img.icons8.com/external-linector-flat-linector/64/000000/external-treatment-personal-hygiene-linector-flat-linector.png"  alt="img"/>
+                <div class="icon"><img
+                        src="https://img.icons8.com/external-linector-flat-linector/64/000000/external-treatment-personal-hygiene-linector-flat-linector.png"
+                        alt="img"/>
                 </div>
                 <h2>Twarz i ciało</h2>
                 <p>Ciało w zależności od wieku, trybu życia, potrzebuje odpowiedniej
@@ -206,7 +215,8 @@
         </div>
         <div class="contact-items">
             <div class="contact-item">
-                <div class="icon"><img th:src="@{/images/contact2.png}" alt="img" src="../static/images/contact2.png"></div>
+                <div class="icon"><img th:src="@{/images/contact2.png}" alt="img" src="../static/images/contact2.png">
+                </div>
                 <div class="contact-info">
                     <h1>Phone</h1>
                     <h2>+48 789 456 123</h2>
@@ -214,7 +224,8 @@
                 </div>
             </div>
             <div class="contact-item">
-                <div class="icon"><img th:src="@{/images/contact1.png}" alt="img" src="../static/images/contact1.png"></div>
+                <div class="icon"><img th:src="@{/images/contact1.png}" alt="img" src="../static/images/contact1.png">
+                </div>
                 <div class="contact-info">
                     <h1>Email</h1>
                     <h2>nowa.wyspa22@gmail.com</h2>
@@ -222,7 +233,8 @@
                 </div>
             </div>
             <div class="contact-item">
-                <div class="icon"><img th:src="@{/images/location.png}" alt="img" src="../static/images/location.png"></div>
+                <div class="icon"><img th:src="@{/images/location.png}" alt="img" src="../static/images/location.png">
+                </div>
                 <div class="contact-info">
                     <h1>Address</h1>
                     <h2>Zgierz</h2>
@@ -243,10 +255,12 @@
         <h2>Bo piękno jest naszą pasją</h2>
         <div class="social-icon">
             <div class="social-item">
-                <a href="#"><img th:src="@{/images/facebook_icon.png}" alt="img" src="../static/images/facebook_icon.png"></a>
+                <a href="#"><img th:src="@{/images/facebook_icon.png}" alt="img"
+                                 src="../static/images/facebook_icon.png"></a>
             </div>
             <div class="social-item">
-                <a href="#"><img th:src="@{/images/instagram_icon.png}" src="../static/images/instagram_icon.png" alt="img"></a>
+                <a href="#"><img th:src="@{/images/instagram_icon.png}" src="../static/images/instagram_icon.png"
+                                 alt="img"></a>
             </div>
         </div>
         <p>Copyright 2022. All rights reserved</p>
