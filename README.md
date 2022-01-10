@@ -46,8 +46,8 @@
 - [x] Created registry view
 - [x] Created reservation list view
 - [x] Created my reservation view
-- [ ] Created admin panel
-- [ ] Created reservation view
+- [x] Created admin panel
+- [x] Created reservation view
 # Preview
 
 <h1 align="center">Main view</h1>
