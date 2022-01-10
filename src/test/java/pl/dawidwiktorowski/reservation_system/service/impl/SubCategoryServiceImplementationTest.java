@@ -2,9 +2,10 @@ package pl.dawidwiktorowski.reservation_system.service.impl;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.*;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Captor;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import pl.dawidwiktorowski.reservation_system.model.SubCategory;
 import pl.dawidwiktorowski.reservation_system.repository.SubCategoryRepository;
 
@@ -53,7 +54,6 @@ class SubCategoryServiceImplementationTest {
 
         // then
         verify(subCategoryRepository).save(captor.capture());
-
         SubCategory subCategoryValue = captor.getValue();
         assertThat(subCategoryValue.getId()).isEqualTo(1L);
 
@@ -69,7 +69,6 @@ class SubCategoryServiceImplementationTest {
 
         // then
         verify(subCategoryRepository).save(captor.capture());
-
         SubCategory subCategoryValue = captor.getValue();
         assertThat(subCategoryValue.getName()).isEqualTo("Rzęsy");
 
@@ -85,7 +84,6 @@ class SubCategoryServiceImplementationTest {
 
         // then
         verify(subCategoryRepository).save(captor.capture());
-
         SubCategory subCategoryValue = captor.getValue();
         assertThat(subCategoryValue.getPrice()).isEqualTo(21.22);
 
