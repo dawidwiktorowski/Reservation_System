@@ -5,50 +5,56 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
+import org.mockito.Captor;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 import pl.dawidwiktorowski.reservation_system.model.Category;
 import pl.dawidwiktorowski.reservation_system.repository.CategoryRepository;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
-@ExtendWith(MockitoExtension.class)
+
 class CategoryServiceImplementationTest {
 
     @Mock
     private CategoryRepository categoryRepository;
+
+    @Mock
+    private Category category;
+
+    @Captor
+    ArgumentCaptor<Category> categoryArgumentCaptor;
+
     private CategoryServiceImplementation underTest;
 
     @BeforeEach
     void setUp() {
+        MockitoAnnotations.openMocks(this);
         underTest = new CategoryServiceImplementation(categoryRepository);
     }
+
     @Test
-    void CanAddCategory() {
+    void shouldGetNameIsFacelift() {
         // given
-        Category category = new Category(
-                1L,
-                "facelift",
-                null
-                );
+        when(category.getName()).thenReturn("facelift");
+
         // when
         underTest.add(category);
 
         // then
 
-        ArgumentCaptor<Category> categoryArgumentCaptor = ArgumentCaptor.forClass(Category.class);
-
         verify(categoryRepository).save(categoryArgumentCaptor.capture());
 
         Category captureCategory = categoryArgumentCaptor.getValue();
-
-        assertThat(captureCategory).isEqualTo(category);
+        assertThat(captureCategory.getName()).isEqualTo("facelift");
     }
 
 
     @Test
-    void CanGetFindAllCategories() {
+    void shouldGetFindAllCategories() {
 
         // when
         underTest.findAll();
