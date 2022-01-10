@@ -1,14 +1,11 @@
 package pl.dawidwiktorowski.reservation_system.service.impl;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.mockito.junit.jupiter.MockitoExtension;
 import pl.dawidwiktorowski.reservation_system.model.Category;
 import pl.dawidwiktorowski.reservation_system.repository.CategoryRepository;
 
@@ -45,9 +42,7 @@ class CategoryServiceImplementationTest {
         underTest.add(category);
 
         // then
-
         verify(categoryRepository).save(categoryArgumentCaptor.capture());
-
         Category captureCategory = categoryArgumentCaptor.getValue();
         assertThat(captureCategory.getName()).isEqualTo("facelift");
     }
@@ -63,10 +58,7 @@ class CategoryServiceImplementationTest {
         verify(categoryRepository).findAll();
     }
 
-    @Disabled
-    @Test
-    void getById() {
-    }
+
 
 
 }
