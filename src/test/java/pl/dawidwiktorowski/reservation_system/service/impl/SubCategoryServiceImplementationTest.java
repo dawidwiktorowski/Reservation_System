@@ -12,7 +12,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-@ExtendWith(MockitoExtension.class)
+
 class SubCategoryServiceImplementationTest {
 
     @Mock
@@ -35,7 +35,7 @@ class SubCategoryServiceImplementationTest {
     }
 
     @Test
-    void findAll() {
+    void shouldFindAll() {
         // when
         subCategoryServiceImplementation.findAll();
 
@@ -52,7 +52,6 @@ class SubCategoryServiceImplementationTest {
         subCategoryServiceImplementation.add(subCategory);
 
         // then
-        ArgumentCaptor<SubCategory> captor = ArgumentCaptor.forClass(SubCategory.class);
         verify(subCategoryRepository).save(captor.capture());
 
         SubCategory subCategoryValue = captor.getValue();
