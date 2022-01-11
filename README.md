@@ -27,6 +27,8 @@
 - HTML
 - CSS
 - Thymeleaf
+- JUnit 5
+- Mockito
 
 # To do list
 
