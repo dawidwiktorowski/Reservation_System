@@ -51,6 +51,7 @@
 - [x] Created my reservation view
 - [x] Created admin panel
 - [x] Created reservation view
+- [x] Send SMS with Twilio 
 # Preview
 
 <h1 align="center">Main view</h1>
