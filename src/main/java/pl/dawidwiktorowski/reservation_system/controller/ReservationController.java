@@ -9,6 +9,7 @@ import pl.dawidwiktorowski.reservation_system.model.Category;
 import pl.dawidwiktorowski.reservation_system.model.Reservation;
 import pl.dawidwiktorowski.reservation_system.service.CategoryServiceInterface;
 import pl.dawidwiktorowski.reservation_system.service.ReservationServiceInterface;
+import pl.dawidwiktorowski.reservation_system.service.impl.AppUserService;
 
 import java.security.Principal;
 import java.util.List;
@@ -21,6 +22,8 @@ public class ReservationController {
     private final CategoryServiceInterface categoryServiceInterface;
 
     private final ReservationServiceInterface reservationServiceInterface;
+
+    private final AppUserService appUserService;
 
 
     @GetMapping(value = "/addReservation")
@@ -61,8 +64,14 @@ public class ReservationController {
         return "redirect:/reservation/userReservation";
     }
 
+    @GetMapping(value = "/deleteReservation/{id}")
+    public String deleteReservation(@PathVariable("id") Long reservationId) {
+        reservationServiceInterface.deleteReservation(reservationId);
+        return "redirect:/reservation/userReservation";
+    }
+
     private AppUser getUser(Principal principal) {
-        return null;
+        return appUserService.findById(Long.parseLong(appUserService.findByEmail(principal.getName()).getId().toString()));
     }
 
 }
