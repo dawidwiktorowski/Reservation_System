@@ -1,5 +1,6 @@
 package pl.dawidwiktorowski.reservation_system.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -10,6 +11,7 @@ import java.util.List;
 @Getter
 @Setter
 @RequiredArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Category {
 
@@ -20,4 +22,5 @@ public class Category {
 
     @OneToMany(mappedBy = "category")
     private List<SubCategory> subCategoryList;
+
 }
