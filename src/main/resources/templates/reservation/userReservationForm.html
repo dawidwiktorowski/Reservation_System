@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link rel="stylesheet" type="text/css" href="/static/css/StaticUserReservationForm.css"
-          th:href="@{/css/StaticUserReservationForm.css}">
+    <link rel="stylesheet" type="text/css" href="/static/css/user/StaticUserReservationForm.css"
+          th:href="@{/css/user/StaticUserReservationForm.css}">
     <meta charset="UTF-8">
     <title>Moje rezerwacje</title>
 </head>
@@ -34,7 +34,7 @@
             <td th:text="${userReservation.subCategory.name}"></td>
             <td th:text="${#temporals.format(userReservation.dateTime, 'dd-MM-yyyy h:mm a')}"></td>
             <td><a class="reg" th:href="@{editReservation/{id} (id = ${userReservation.id})}">Edytuj</a></td>
-            <td><a class="reg" th:href="@{userReservation/{reservationId} (reservationId = ${userReservation.id})}">Usuń</a>
+            <td><a class="reg" th:href="@{deleteReservation/{reservationId} (reservationId = ${userReservation.id})}">Usuń</a>
             </td>
         </tr>
         </tbody>
