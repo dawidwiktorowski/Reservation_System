@@ -3,7 +3,6 @@ package pl.dawidwiktorowski.reservation_system.service.impl;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.dawidwiktorowski.reservation_system.model.SubCategory;
-import pl.dawidwiktorowski.reservation_system.repository.CategoryRepository;
 import pl.dawidwiktorowski.reservation_system.repository.SubCategoryRepository;
 import pl.dawidwiktorowski.reservation_system.service.SubCategoryServiceInterface;
 
