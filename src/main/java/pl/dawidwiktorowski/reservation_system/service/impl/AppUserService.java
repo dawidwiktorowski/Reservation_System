@@ -1,4 +1,5 @@
 package pl.dawidwiktorowski.reservation_system.service.impl;
+
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -28,6 +29,14 @@ public class AppUserService implements UserDetailsService {
                 orElseThrow(() -> new UsernameNotFoundException(String.format(USER_NOT_FOUND_MSG, email)));
     }
 
+    public AppUser findById(Long userId) {
+        return appUserRepository.findById(userId).orElse(null);
+    }
+
+    public AppUser findByEmail(String email) {
+        return appUserRepository.findByEmail(email).orElse(null);
+    }
+
     public String signUpUser(AppUser appUser) {
         boolean userExists = appUserRepository.findByEmail(appUser.getEmail())
                 .isPresent();
@@ -37,6 +46,7 @@ public class AppUserService implements UserDetailsService {
         }
         String encodePassword = bCryptPasswordEncoder.encode(appUser.getPassword());
         appUser.setPassword(encodePassword);
+
 
         appUserRepository.save(appUser);
 
