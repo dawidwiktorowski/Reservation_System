@@ -26,6 +26,7 @@ public class ReservationServiceImplementation implements ReservationServiceInter
     private final EmailService emailService;
 
 
+
     @Override
     public void save(Reservation reservation, AppUser appUser) {
         reservation.setStatus(false);
@@ -66,11 +67,11 @@ public class ReservationServiceImplementation implements ReservationServiceInter
             Message.creator(
                     new PhoneNumber(reservation.getAppUser().getPhoneNumber()),
                     new PhoneNumber(twilioConfiguration.getTrialNumber()),
-                    "Twoja rezerwacja na: " + reservation.getSubCategory().getName() + " w dniu "
+                    "Twoja rezerwacja na usługę: " + reservation.getSubCategory().getName() + " z dnia "
                     + dateTimeFormatter.format(reservation.getDateTime()) + " została odwołana").create();
             reservationRepository.delete(reservation);
+            emailService.sendEmailWhenUserDeleteReservation(reservation.getAppUser(), reservation.getDateTime(),reservation.getSubCategory());
         });
-
     }
 
     @Override
