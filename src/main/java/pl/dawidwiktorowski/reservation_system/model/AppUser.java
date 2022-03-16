@@ -3,7 +3,6 @@ package pl.dawidwiktorowski.reservation_system.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.Hibernate;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,15 +18,8 @@ import java.util.Objects;
 @Entity
 public class AppUser implements UserDetails {
 
-
-    @SequenceGenerator(
-            name = "student_sequence",
-            sequenceName = "student_sequence",
-            allocationSize = 1
-    )
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
-            generator = "student_sequence")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
     private String lastName;
