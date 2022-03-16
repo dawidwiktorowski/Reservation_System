@@ -24,7 +24,7 @@ public class AdminController {
 
     private final ReservationServiceInterface reservationServiceInterface;
 
-    @PreAuthorize("isAuthenticated() and hasAuthority('ROLE_ADMIN')")
+    @PreAuthorize(value = "isAuthenticated() and hasRole('ADMIN')")
     @GetMapping(value = "/main")
     public String showAdminPanel(Model model) {
         List<Category> categories = categoryServiceInterface.findAll();
@@ -35,7 +35,7 @@ public class AdminController {
     @GetMapping(value = "/addCategory")
     public String showAddCategoryForm(Model model) {
         model.addAttribute("category", new Category());
-        return "admin/addcategory";
+        return "admin/addCategory";
     }
 
     @PostMapping(value = "/addCategory")
@@ -49,7 +49,7 @@ public class AdminController {
         List<Category> categories = categoryServiceInterface.findAll();
         model.addAttribute("categories", categories);
         model.addAttribute("subcategory", new SubCategory());
-        return "admin/addsubcategory";
+        return "admin/addSubcategory";
     }
 
     @PostMapping(value = "/addSubCategory")
