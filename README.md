@@ -85,5 +85,5 @@
 <h1 align="center">SMS booking acceptance</h1>
 
 <p align="center">
-<img alt="SMS_booking_acceptance" src="./screenshots/SMS_acceptance.jpg"/>
+<img alt="SMS_booking_acceptance"  src="./screenshots/SMS_acceptance.jpg"/>
 </p>
