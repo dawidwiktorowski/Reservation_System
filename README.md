@@ -90,5 +90,5 @@
 
 <h1 align="center">Admin panel - reservation</h1>
 <p align="center">
-<img alt="Admin_panel_reservation"  src="./screenshots/AdminPanelReservation.jpg"/>
+<img alt="Admin_panel_reservation"  src="./screenshots/AdminPanelReservation.png"/>
 </p>
