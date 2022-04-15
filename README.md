@@ -85,5 +85,10 @@
 <h1 align="center">SMS booking acceptance</h1>
 
 <p align="center">
-<img alt="SMS_booking_acceptance"  src="./screenshots/SMS_Acceptance.jpg"/>
+<img alt="SMS_booking_acceptance"  src="./screenshots/SMS_acceptance.jpg"/>
+</p>
+
+<h1 align="center">Admin panel - reservation</h1>
+<p align="center">
+<img alt="Admin_panel_reservation"  src="./screenshots/AdminPanelReservation.jpg"/>
 </p>
